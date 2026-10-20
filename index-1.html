@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Kapda Ghar</title>
+<meta name="description" content="Kapda Ghar: T-shirts, shirts, jeans, hoodies aur dresses sahi daam mein. Free delivery ₹999 ke upar, 7 din mein return, cash on delivery.">
+<meta name="keywords" content="clothes online, t-shirts, shirts, jeans, hoodies, dresses, kapde, men clothing, women clothing">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f6b4f">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kapda Ghar">
+<meta property="og:title" content="Kapda Ghar | Roz pehanne wale kapde">
+<meta property="og:description" content="T-shirts, shirts, jeans, hoodies aur dresses. Free delivery ₹999 ke upar aur 7 din mein return.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kapda Ghar | Roz pehanne wale kapde">
+<meta name="twitter:description" content="T-shirts, shirts, jeans, hoodies aur dresses sahi daam mein.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+/* Layout: sticky top bar, split hero, category chips, product grid, cart drawer, footer */
+:root{
+  --bg:#f3f5f4; --surface:#ffffff; --fg:#111614; --muted:#5b6662; --line:#dde3e0; --accent:#0f6b4f; --accent-fg:#ffffff; --tint:#e3eee9;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"DM Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0f1312;--surface:#171d1b;--fg:#eef2f0;--muted:#9aa7a2;--line:#26302d;--accent:#4cc9a0;--accent-fg:#0b1512;--tint:#1b2824;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0f1312;--surface:#171d1b;--fg:#eef2f0;--muted:#9aa7a2;--line:#26302d;--accent:#4cc9a0;--accent-fg:#0b1512;--tint:#1b2824;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+.wrap{max-width:1100px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:-.02em;text-decoration:none}
+.logo span{color:var(--accent)}
+nav{display:flex;gap:20px;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--fg)}
+.cartbtn{display:flex;align-items:center;gap:8px;background:var(--fg);color:var(--bg);border:0;border-radius:999px;padding:9px 16px;font-weight:700}
+.cartbtn b{background:var(--accent);color:var(--accent-fg);border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:.8rem;padding:0 6px}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding-block:40px 32px}
+.hero>*{min-width:0}
+.eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;margin:10px 0 14px}
+.hero p{color:var(--muted);max-width:46ch;margin:0 0 22px}
+.cta{display:inline-block;background:var(--accent);color:var(--accent-fg);border:0;border-radius:10px;padding:13px 22px;font-weight:700;text-decoration:none}
+.perks{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:.88rem;color:var(--muted)}
+.hero-art{background:var(--tint);border-radius:22px;aspect-ratio:1/1;max-width:100%;display:grid;place-items:center;padding:8%}
+.hero-art svg{width:100%;height:100%}
+
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:28px 14px}
+.sec-head h2{font-size:1.7rem;font-weight:800;letter-spacing:-.02em}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:7px 15px;font-size:.9rem}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;padding-bottom:24px}
+.card{display:flex;flex-direction:column;gap:10px;min-width:0}
+.pic{background:var(--surface);border:1px solid var(--line);border-radius:16px;aspect-ratio:4/5;display:grid;place-items:center;padding:14%;position:relative}
+.pic svg{width:100%;height:100%}
+.tag{position:absolute;top:10px;left:10px;background:var(--accent);color:var(--accent-fg);font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px}
+.card h3{font-size:1.02rem;font-weight:600}
+.meta{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.price{font-weight:700;font-variant-numeric:tabular-nums}
+.price s{color:var(--muted);font-weight:400;font-size:.85rem;margin-left:6px}
+.sub{color:var(--muted);font-size:.85rem}
+.sizes{display:flex;gap:6px;flex-wrap:wrap}
+.sz{border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:8px;min-width:34px;height:30px;font-size:.8rem}
+.sz[aria-pressed="true"]{border-color:var(--accent);background:var(--tint);color:var(--accent);font-weight:700}
+.add{background:transparent;color:var(--fg);border:1.5px solid var(--fg);border-radius:10px;padding:9px;font-weight:700}
+.add:hover{background:var(--fg);color:var(--bg)}
+.igpill{border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:.9rem;font-weight:700;text-decoration:none;color:var(--fg);background:var(--surface)}
+.igpill:hover{border-color:var(--accent);color:var(--accent)}
+.igbtn{display:block;text-align:center;text-decoration:none;color:var(--accent);font-size:.88rem;font-weight:700;padding:4px}
+.follow{background:var(--tint);border-radius:18px;padding:26px 22px;margin-block:8px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.follow h2{font-size:1.4rem;font-weight:800}
+.follow p{margin:4px 0 0;color:var(--muted)}
+@media (max-width:760px){.igpill{display:none}}
+
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding-block:28px;border-top:1px solid var(--line);margin-top:12px}
+.info div{min-width:0}
+.info h3{font-size:1.05rem;margin-bottom:4px}
+.info p{margin:0;color:var(--muted);font-size:.92rem}
+footer{border-top:1px solid var(--line);padding-block:26px 34px;color:var(--muted);font-size:.9rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:20}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(380px,100%);background:var(--surface);z-index:21;display:flex;flex-direction:column;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) 16px;border-left:1px solid var(--line)}
+.drawer h2{font-size:1.3rem;display:flex;justify-content:space-between;align-items:center}
+.x{background:none;border:0;color:var(--fg);font-size:1.4rem;line-height:1}
+.lines{flex:1;overflow:auto;margin:14px 0;display:flex;flex-direction:column;gap:12px}
+.line{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:10px;font-size:.93rem}
+.line small{color:var(--muted);display:block}
+.empty{color:var(--muted);text-align:center;padding:40px 10px}
+.total{display:flex;justify-content:space-between;font-weight:700;font-size:1.1rem;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.note{font-size:.8rem;color:var(--muted);margin-top:8px;text-align:center}
+
+@media (max-width:760px){
+  nav{display:none}
+  .hero{grid-template-columns:1fr;padding-top:24px}
+  .hero-art{order:-1;aspect-ratio:16/10;padding:5%}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .pic svg{transition:transform .25s}
+  .card:hover .pic svg{transform:scale(1.05)}
+}
+</style>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">Kapda<span>.</span>Ghar</a>
+    <nav><a href="#shop">Shop</a><a href="#info">Delivery</a><a href="#contact">Contact</a></nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="igpill" href="https://instagram.com/ravi286741" target="_blank" rel="noopener">Instagram</a>
+      <button class="cartbtn" id="openCart" aria-label="Cart kholo">Cart <b id="count">0</b></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="top" role="main">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Naya collection 2026</div>
+      <h1>Roz pehanne wale kapde, sahi daam mein.</h1>
+      <p>T-shirts, shirts, jeans aur hoodies. Soft cotton, pakka fit, aur seedha ghar tak delivery.</p>
+      <a class="cta" href="#shop">Shopping shuru karein</a>
+      <div class="perks"><span>Free delivery ₹999 ke upar</span><span>7 din mein return</span><span>Cash on delivery</span></div>
+    </div>
+    <div class="hero-art" id="heroArt" aria-hidden="true"></div>
+  </section>
+
+  <section id="shop">
+    <div class="sec-head">
+      <h2>Saare kapde</h2>
+      <div class="chips" id="chips" role="group" aria-label="Category filter"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="info" id="info">
+    <div><h3>Fast delivery</h3><p>Zyadatar shehron mein 3 se 5 din mein ghar pe.</p></div>
+    <div><h3>Aasan return</h3><p>Size fit na ho to 7 din ke andar badal lein ya wapas karein.</p></div>
+    <div><h3>Safe payment</h3><p>UPI, card ya cash on delivery, jo aapko theek lage.</p></div>
+  </section>
+
+  <section class="follow">
+    <div>
+      <h2>Instagram pe judiye</h2>
+      <p>Naye kapdon ki photos aur offers ke liye follow karein: @ravi286741</p>
+    </div>
+    <a class="cta" href="https://instagram.com/ravi286741" target="_blank" rel="noopener">Follow karein</a>
+  </section>
+
+  <footer id="contact">
+    <span>© 2026 Kapda Ghar · <a href="https://instagram.com/ravi286741" target="_blank" rel="noopener">@ravi286741</a></span>
+    <span>Sample store. Yahan ke products aur daam example hain.</span>
+  </footer>
+</main>
+
+<div id="layer" hidden>
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" role="dialog" aria-label="Aapki cart">
+    <h2>Aapki cart <button class="x" id="closeCart" aria-label="Band karo">×</button></h2>
+    <div class="lines" id="lines"></div>
+    <div class="total"><span>Total</span><span id="total">₹0</span></div>
+    <button class="cta" id="checkout" style="width:100%">Order karein</button>
+    <div class="note" id="note"></div>
+  </aside>
+</div>
+
+<script>
+var SHAPES = {
+  tee:'M30 14 L42 10 Q50 19 58 10 L70 14 L90 28 L80 41 L72 36 L72 88 L28 88 L28 36 L20 41 L10 28 Z',
+  shirt:'M30 12 L43 9 L50 20 L57 9 L70 12 L91 30 L81 43 L72 38 L72 90 L28 90 L28 38 L19 43 L9 30 Z',
+  hoodie:'M32 16 Q50 2 68 16 L90 32 L80 46 L72 40 L72 90 L28 90 L28 40 L20 46 L10 32 Z',
+  jeans:'M28 8 H72 L77 92 H55 L50 38 L45 92 H23 Z',
+  dress:'M38 8 H62 L60 36 L80 92 H20 L40 36 Z',
+  jacket:'M30 12 L44 8 L50 18 L56 8 L70 12 L92 32 L84 80 L72 80 L72 90 L28 90 L28 80 L16 80 L8 32 Z'
+};
+var DETAIL = {
+  tee:'', shirt:'M50 20 V90 M43 9 L50 20 L57 9',
+  hoodie:'M44 28 Q50 38 56 28 M50 38 V58', jeans:'M50 8 V38 M28 18 H72',
+  dress:'M40 36 H60', jacket:'M50 18 V90 M30 60 H42 M58 60 H70'
+};
+function svg(kind,color,stroke){
+  return '<svg viewBox="0 0 100 100" aria-hidden="true"><path d="'+SHAPES[kind]+'" fill="'+color+'" stroke="'+(stroke||'rgba(0,0,0,.18)')+'" stroke-width="1.2" stroke-linejoin="round"/>'+
+    (DETAIL[kind]?'<path d="'+DETAIL[kind]+'" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.4" stroke-linecap="round"/>':'')+'</svg>';
+}
+var PRODUCTS = [
+  {id:1,name:'Classic Cotton T-shirt',cat:'T-shirts',kind:'tee',color:'#2f4a7a',price:499,old:699,tag:'Best seller',fit:'Regular fit, 100% cotton',sizes:['S','M','L','XL']},
+  {id:2,name:'Oversized Graphic Tee',cat:'T-shirts',kind:'tee',color:'#c9483a',price:599,fit:'Oversized, 220 GSM',sizes:['M','L','XL']},
+  {id:3,name:'Linen Casual Shirt',cat:'Shirts',kind:'shirt',color:'#8fb5a6',price:899,old:1199,fit:'Slim fit, breathable linen',sizes:['S','M','L','XL']},
+  {id:4,name:'Checked Formal Shirt',cat:'Shirts',kind:'shirt',color:'#6b7a8f',price:999,fit:'Regular fit, office wear',sizes:['M','L','XL']},
+  {id:5,name:'Straight Fit Jeans',cat:'Jeans',kind:'jeans',color:'#35527a',price:1299,old:1699,tag:'Sale',fit:'Mid rise, stretch denim',sizes:['30','32','34','36']},
+  {id:6,name:'Black Slim Jeans',cat:'Jeans',kind:'jeans',color:'#23272e',price:1399,fit:'Slim fit, stretch denim',sizes:['30','32','34']},
+  {id:7,name:'Fleece Pullover Hoodie',cat:'Winter',kind:'hoodie',color:'#7c8b6e',price:1499,old:1899,tag:'New',fit:'Relaxed fit, soft fleece',sizes:['S','M','L','XL']},
+  {id:8,name:'Zip Bomber Jacket',cat:'Winter',kind:'jacket',color:'#3d4a3a',price:2199,fit:'Regular fit, light padding',sizes:['M','L','XL']},
+  {id:9,name:'Floral Summer Dress',cat:'Dresses',kind:'dress',color:'#d68a9c',price:1199,old:1499,fit:'A-line, soft rayon',sizes:['S','M','L']},
+  {id:10,name:'Everyday Midi Dress',cat:'Dresses',kind:'dress',color:'#e0b25a',price:1349,fit:'Midi length, cotton blend',sizes:['S','M','L','XL']}
+];
+var CATS = ['Sab'].concat(PRODUCTS.map(function(p){return p.cat}).filter(function(c,i,a){return a.indexOf(c)===i}));
+var cat='Sab', cart=[], pick={};
+var $=function(id){return document.getElementById(id)};
+var rs=function(n){return '₹'+n.toLocaleString('en-IN')};
+
+$('heroArt').innerHTML = svg('hoodie','#4f8c76');
+
+function renderChips(){
+  $('chips').innerHTML = CATS.map(function(c){return '<button class="chip" data-c="'+c+'" aria-pressed="'+(c===cat)+'">'+c+'</button>'}).join('');
+}
+function renderGrid(){
+  var list = PRODUCTS.filter(function(p){return cat==='Sab'||p.cat===cat});
+  $('grid').innerHTML = list.map(function(p){
+    var s = pick[p.id]||p.sizes[1]||p.sizes[0];
+    return '<article class="card"><div class="pic">'+(p.tag?'<span class="tag">'+p.tag+'</span>':'')+svg(p.kind,p.color)+'</div>'+
+      '<div><h3>'+p.name+'</h3><div class="sub">'+p.fit+'</div></div>'+
+      '<div class="meta"><span class="price">'+rs(p.price)+(p.old?'<s>'+rs(p.old)+'</s>':'')+'</span></div>'+
+      '<div class="sizes" data-p="'+p.id+'">'+p.sizes.map(function(z){return '<button class="sz" data-z="'+z+'" aria-pressed="'+(z===s)+'">'+z+'</button>'}).join('')+'</div>'+
+      '<button class="add" data-add="'+p.id+'">Cart mein daalein</button>'+
+      '<a class="igbtn" href="https://ig.me/m/ravi286741" target="_blank" rel="noopener">Instagram pe order karein</a></article>';
+  }).join('');
+}
+function renderCart(){
+  var n=cart.reduce(function(a,l){return a+l.q},0), t=cart.reduce(function(a,l){return a+l.q*l.p.price},0);
+  $('count').textContent=n; $('total').textContent=rs(t);
+  $('lines').innerHTML = cart.length ? cart.map(function(l,i){
+    return '<div class="line"><div>'+l.p.name+'<small>Size '+l.size+' · Qty '+l.q+'</small></div><div><b>'+rs(l.q*l.p.price)+'</b><br><button class="x" style="font-size:.8rem;color:var(--muted)" data-rm="'+i+'">hatao</button></div></div>';
+  }).join('') : '<div class="empty">Cart abhi khaali hai.</div>';
+}
+document.addEventListener('click',function(e){
+  var t=e.target.closest('button'); if(!t) return;
+  if(t.dataset.c){cat=t.dataset.c;renderChips();renderGrid();}
+  else if(t.dataset.z){var id=+t.parentNode.dataset.p;pick[id]=t.dataset.z;renderGrid();}
+  else if(t.dataset.add){
+    var p=PRODUCTS.filter(function(x){return x.id==+t.dataset.add})[0], size=pick[p.id]||p.sizes[1]||p.sizes[0];
+    var f=cart.filter(function(l){return l.p.id===p.id&&l.size===size})[0];
+    if(f)f.q++;else cart.push({p:p,size:size,q:1});
+    $('note').textContent='';renderCart();
+    t.textContent='Add ho gaya';setTimeout(function(){t.textContent='Cart mein daalein'},900);
+  }
+  else if(t.dataset.rm){cart.splice(+t.dataset.rm,1);renderCart();}
+  else if(t.id==='openCart'){$('layer').hidden=false;}
+  else if(t.id==='closeCart'){$('layer').hidden=true;}
+  else if(t.id==='checkout'){$('note').textContent=cart.length?'Yeh sample store hai, isliye asli order nahi hota.':'Pehle kuch cart mein daalein.';}
+});
+$('scrim').addEventListener('click',function(){$('layer').hidden=true});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')$('layer').hidden=true});
+renderChips();renderGrid();renderCart();
+
+/* SEO: structured data for Google (store + product list) */
+try{
+  var ld={"@context":"https://schema.org","@graph":[
+    {"@type":"ClothingStore","name":"Kapda Ghar","description":"T-shirts, shirts, jeans, hoodies aur dresses sahi daam mein.","priceRange":"₹₹","sameAs":["https://instagram.com/ravi286741"]},
+    {"@type":"ItemList","name":"Kapda Ghar products","itemListElement":PRODUCTS.map(function(p,i){return {"@type":"ListItem","position":i+1,"item":{"@type":"Product","name":p.name,"category":p.cat,"description":p.fit,"offers":{"@type":"Offer","priceCurrency":"INR","price":String(p.price),"availability":"https://schema.org/InStock"}}}})}
+  ]};
+  var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify(ld);document.head.appendChild(s);
+}catch(e){}
+</script>
+
+</html>
